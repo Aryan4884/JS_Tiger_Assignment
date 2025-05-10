@@ -1,17 +1,29 @@
+import dbConnect from '../../../lib/dbConnect';
+import Vendor from '../../../models/Vendor';
+
 export default async function handler(req, res) {
   await dbConnect();
 
   if (req.method === 'GET') {
-    const vendors = await Vendor.find().limit(20);
-    return res.status(200).json(vendors);
+    try {
+      const vendors = await Vendor.find().limit(20);
+      return res.status(200).json(vendors);
+    } catch (err) {
+      console.error('GET /vendors error:', err);
+      return res.status(500).json({ error: 'Internal Server Error' });
+    }
   }
 
   if (req.method === 'POST') {
-    const vendor = await Vendor.create(req.body);
-    return res.status(201).json(vendor);
+    try {
+      const vendor = await Vendor.create(req.body);
+      return res.status(201).json(vendor);
+    } catch (err) {
+      console.error('POST /vendors error:', err);
+      return res.status(500).json({ error: 'Failed to create vendor', details: err.message });
+    }
   }
 
-  // Fallback for unsupported methods
   res.setHeader('Allow', ['GET', 'POST']);
   return res.status(405).end(`Method ${req.method} Not Allowed`);
 }
