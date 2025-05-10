@@ -33,7 +33,7 @@ export default function HomePage() {
         <div className="w-full max-w-xl p-10 space-y-6 shadow-xl rounded-lg border">
           <div className="flex flex-col items-center space-y-4">
             <Image
-              src="/store-icon.png"
+              src="/icon.png"
               alt="Store Icon"
               width={100}
               height={100}

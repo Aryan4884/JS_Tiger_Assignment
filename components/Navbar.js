@@ -12,7 +12,7 @@ export default function Navbar() {
       {/* Left Section - Logo + Title */}
       <div className="flex items-center space-x-3">
   <Image
-    src="/store-icon.png"
+    src="/icon.png"
     alt="Logo"
     width={54}
     height={54}
