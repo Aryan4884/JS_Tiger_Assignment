@@ -27,7 +27,7 @@ export default function Navbar() {
         <div className="relative">
           <button
             onClick={() => setDropdownOpen(prev => !prev)}
-            className="flex items-center space-x-2 bg-gray-700 px-3 py-1 rounded hover:bg-gray-600 transition"
+            className="flex items-center space-x-2 bg-gray-700 px-3 py-1 rounded hover:bg-gray-600 hover:cursor-pointer transition"
           >
             {session.user.image && (
               <Image
@@ -54,7 +54,7 @@ export default function Navbar() {
             <div className="absolute right-0 mt-2 w-40 bg-white text-gray-800 rounded shadow-lg z-50">
               <button
                 onClick={() => signOut({ callbackUrl: '/' })}
-                className="block w-full text-left px-4 py-2 hover:bg-gray-100"
+                className="block w-full text-left px-4 py-2 hover:bg-gray-100 hover:cursor-pointer transition"
               >
                 Logout
               </button>
@@ -64,7 +64,7 @@ export default function Navbar() {
       ) : (
         <button
           onClick={() => signIn('google')}
-          className="bg-green-500 hover:bg-green-600 px-4 py-2 rounded transition"
+          className="bg-green-500 hover:bg-green-600 hover:cursor-pointer transition px-4 py-2 rounded"
         >
           Login with Google
         </button>

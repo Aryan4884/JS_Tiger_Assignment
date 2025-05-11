@@ -95,7 +95,7 @@ export default function VendorForm({ initialData = {} }) {
 
           <button
             type="submit"
-            className="w-full bg-blue-600 text-white py-3 rounded font-semibold hover:bg-blue-700 transition hover:cursor-pointer transition"
+            className="w-full bg-blue-600 text-white py-3 rounded font-semibold hover:bg-blue-700 hover:cursor-pointer transition"
           >
             {isEdit ? 'Update Vendor' : 'Create Vendor'}
           </button>
