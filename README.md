@@ -30,7 +30,6 @@ A full-stack Vendor Management web application built with **Next.js**, **MongoDB
 
 ```bash
 git clone https://github.com/Aryan4884/JS_Tiger_Assignment.git
-cd vendor-management-app
 ```
 ### 2. Create a .env.local for variables
 
